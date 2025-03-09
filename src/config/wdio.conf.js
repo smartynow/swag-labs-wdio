@@ -20,9 +20,7 @@ export const config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
-    specs: [
-        './test/specs/**/*.js'
-    ],
+    specs: ['../tests/**/*.test.js'],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -49,9 +47,16 @@ export const config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'chrome'
-    }],
+    capabilities: [
+        {
+            browserName: 'chrome',
+            maxInstances: 5
+        },
+        {
+            browserName: 'firefox',
+            maxInstances: 5
+        }
+    ],
 
     //
     // ===================
@@ -61,6 +66,8 @@ export const config = {
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
     logLevel: 'info',
+    outputDir: './logs',
+
     //
     // Set specific log levels per logger
     // loggers:
@@ -84,7 +91,7 @@ export const config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    // baseUrl: 'http://localhost:8080',
+    // baseUrl: 'https://www.saucedemo.com/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
