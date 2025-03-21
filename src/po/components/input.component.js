@@ -10,10 +10,6 @@ export default class InputComponent extends BaseComponent {
         await element.setValue(value);
     }
 
-    async clear() {
-        await super.clear();
-    }
-
     async getValue() {
         const element = await this.getElement();
         return await element.getValue();
